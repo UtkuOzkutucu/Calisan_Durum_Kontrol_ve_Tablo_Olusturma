@@ -82,5 +82,5 @@ class Issiz:
             print("Hata Olustu.", Hata) #hata mesajı
 
     def __str__(self):
-        return "Tc No: {}\nAd: {}\nSoyad: {}\nYaş: {}\nCinsiyet: {}\nUyruk: {}\nStatü: {}\n".format(self.__tc_no, self.__ad, self.__soyad, self.__yas, self.__cinsiyet, self.__uyruk, self.__statu)
+        return "Tc No: {}\nAd: {}\nSoyad: {}\nYaş: {}\nCinsiyet: {}\nUyruk: {}\nKişiye Uygun Statü: {}\n".format(self.__tc_no, self.__ad, self.__soyad, self.__yas, self.__cinsiyet, self.__uyruk, self.__statu)
     
