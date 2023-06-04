@@ -33,7 +33,7 @@ class Calisan(Insan):
             elif self.__tecrube > 48 and self.__maas < 25000:
                 return (self.__maas % self.__tecrube / 2)
             else:
-                return self.__maas
+                return 0
         except Exception as Hata: #hatanın ne hatası olduğunu gösterme
             print("Hata: ", Hata)
 
