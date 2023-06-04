@@ -28,5 +28,5 @@ class Issiz(Insan):
             print("Hata: ", Hata)
     
     def __str__(self):
-        return "Ad: {}\nSoyad: {}\nOnerilen Statü: {}\n".format(self.get_ad(), self.get_soyad(), self.__statu)
+        return "Ad: {}\nSoyad: {}\nOnerilen Statü: {}\n".format(self.get_ad(), self.get_soyad(), self.statu_bul())
 
