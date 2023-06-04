@@ -42,4 +42,4 @@ class Calisan(Insan):
         
 
     def __str__(self):
-        return "Ad: {}\nSoyad: {}\nTecrübe: {}\nYeni Maaş: {}\n".format(self.__ad, self.__soyad, self.__tecrube, self.Son_maas())
+        return "Ad: {}\nSoyad: {}\nTecrübe: {}\nYeni Maaş: {}\n".format(self.get_ad(), self.get_soyad(), self.get_tecrube(), self.Son_maas())
