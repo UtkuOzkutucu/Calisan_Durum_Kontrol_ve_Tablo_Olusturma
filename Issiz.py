@@ -1,15 +1,10 @@
 import Insan
 class Issiz(Insan):
-    def __init__(self, statu, tecrube):
-        self.__statu = statu
+    def __init__(self, tecrube):
+        self._statu = self.statu_bul()
         self.__tecrube = tecrube
         self.__statu_dict = {"Mavi Yaka": 0.2, "Beyaz Yaka": 0.35, "Yönetici": 0.45}
     
-    def get_statu(self):
-        return self.__statu
-    
-    def set_statu(self, statu):
-        self.__statu = statu
     
     def get_tecrube(self):
         return self.__tecrube
