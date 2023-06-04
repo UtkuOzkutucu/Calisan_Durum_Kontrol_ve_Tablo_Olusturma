@@ -8,8 +8,8 @@ class Issiz(Insan):
     def get_gecmis_tecrube(self):
         return self.__tecrube
     
-    def set_gecmis_tecrube(self, gecmis_tecrube):
-        self.__tecrube = gecmis_tecrube
+    def set_gecmis_tecrube(self, tecrube):
+        self.__tecrube = tecrube
     
     def statu_bul(self):
         try:
