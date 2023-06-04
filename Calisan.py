@@ -1,6 +1,7 @@
-import Insan
+from Insan import Insan
 class Calisan(Insan):
-    def __init__(self, sektor, tecrube, maas):
+    def __init__(self, tc_no, ad, soyad, yas, cinsiyet, uyruk, sektor, tecrube, maas):
+        super().__init__(tc_no, ad, soyad, yas, cinsiyet, uyruk)
         self.__sektor = sektor
         self.__tecrube = tecrube
         self.__maas = maas
@@ -37,17 +38,8 @@ class Calisan(Insan):
             print("Hata: ", Hata)
 
     def Son_maas(self):
-        try:
-            if self.__tecrube < 24:
-                return self.__maas 
-            elif self.__tecrube >= 24 and self.__tecrube <= 48 and self.__maas < 15000:
-                return self.__maas + (self.__maas * (self.__maas % self.__tecrube))
-            elif self.__tecrube > 48 and self.__maas < 25000:
-                return self.__maas + (self.__maas * (self.__maas % self.__tecrube / 2))
-            else:
-                return self.__maas
-        except Exception as Hata: #hatanın ne hatası olduğunu gösterme
-            print("Hata: ", Hata)    
+            return self.__maas + self.__maas * 0.01 * self.zam_hakki()
+        
 
     def __str__(self):
-        return "Ad: {}\nSoyad: {}\nTecrübe: {}\nYeni Maaş: {}\n".format(self.__ad, self.__soyad, self.__tecrube, self.__son_maas)
+        return "Ad: {}\nSoyad: {}\nTecrübe: {}\nYeni Maaş: {}\n".format(self.__ad, self.__soyad, self.__tecrube, self.Son_maas())
