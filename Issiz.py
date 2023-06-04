@@ -1,39 +1,32 @@
-import Insan
+from Insan import Insan
 class Issiz(Insan):
-    def __init__(self, tecrube):
-        self._statu = self.statu_bul()
+    def __init__(self, tc_no, ad, soyad, yas, cinsiyet, uyruk, tecrube):
+        super().__init__(tc_no, ad, soyad, yas, cinsiyet, uyruk)
+        self.__statu = ""
         self.__tecrube = tecrube
-        self.__statu_dict = {"Mavi Yaka": 0.2, "Beyaz Yaka": 0.35, "Yönetici": 0.45}
     
-    
-    def get_tecrube(self):
+    def get_gecmis_tecrube(self):
         return self.__tecrube
     
-    def set_tecrube(self, tecrube):
-        self.__tecrube = tecrube
+    def set_gecmis_tecrube(self, gecmis_tecrube):
+        self.__tecrube = gecmis_tecrube
     
     def statu_bul(self):
         try:
-            mavi_yaka_etkisi = 0
-            beyaz_yaka_etkisi = 0
-            yonetici_etkisi = 0
-            
-            for statu, yil in self.__statu_dict.keys(), self.__tecrube:
-                if statu == "Mavi yaka":
-                    mavi_yaka_etkisi += yil * self.__statu_dict["Mavi Yaka"]
-                elif statu == "Beyaz yaka":
-                    beyaz_yaka_etkisi += yil * self.__statu_dict["Beyaz Yaka"]
-                elif statu == "Yonetici":
-                    yonetici_etkisi += yil * self.__statu_dict["Yonetici"]
-            
-            if mavi_yaka_etkisi > beyaz_yaka_etkisi and mavi_yaka_etkisi > yonetici_etkisi:
-                return "mavi yaka"
-            elif beyaz_yaka_etkisi > mavi_yaka_etkisi and beyaz_yaka_etkisi > yonetici_etkisi:
-                return "beyaz yaka"
+            mavi_etki= self.__tecrube["mavi_yaka"] * 0.2
+            beyaz_etki = self.__tecrube["beyaz_yaka"] * 0.35
+            yonetici_etki = self.__tecrube["yonetici"] * 0.45
+            if mavi_etki > beyaz_etki and mavi_etki > yonetici_etki:
+                self.__statu = "Mavi yaka"
+            elif beyaz_etki > mavi_etki and beyaz_etki > yonetici_etki:
+                self.__statu = "Beyaz yaka"
+            elif yonetici_etki > mavi_etki and yonetici_etki > beyaz_etki:
+                self.__statu = "Yönetici"
             else:
-                return "yonetici"
-        except Exception as Hata:
+                print("Geçersiz statü")
+        except Exception as Hata: #hatanın ne hatası olduğunu gösterme
             print("Hata: ", Hata)
     
     def __str__(self):
-        return "Ad: {}\nSoyad: {}\nStatü: {}\nTecrübe: {}\n".format(self.get_ad(), self.get_soyad(), self.get_statu(), self.statu_bul())
+        return "Ad: {}\nSoyad: {}\nOnerilen Statü: {}\n".format(self.get_ad(), self.get_soyad(), self.__statu)
+
