@@ -75,6 +75,8 @@ def main():
     
     df2 = df[["ad", "soyad", "sektör", "yeni_maaş"]]
     print(df2)
+    print("Bu Branch'te değişiklik yapıldı.")
+
 
 main()
 
