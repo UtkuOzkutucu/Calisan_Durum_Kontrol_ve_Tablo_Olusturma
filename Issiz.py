@@ -4,7 +4,9 @@ class Issiz(Insan):
         super().__init__(tc_no, ad, soyad, yas, cinsiyet, uyruk)
         self.__statu = ""
         self.__tecrube = tecrube
-    
+        self.statu_bul()
+        
+
     def get_gecmis_tecrube(self):
         return self.__tecrube
     
@@ -23,10 +25,14 @@ class Issiz(Insan):
             elif yonetici_etki > mavi_etki and yonetici_etki > beyaz_etki:
                 self.__statu = "Yönetici"
             else:
-                print("Geçersiz statü")
-        except Exception as Hata: #hatanın ne hatası olduğunu gösterme
+                self.__statu = "İşsiz"
+        except Exception as Hata:
             print("Hata: ", Hata)
+
+    def get_statu(self):
+        return self.__statu
+    
     
     def __str__(self):
-        return "Ad: {}\nSoyad: {}\nOnerilen Statü: {}\n".format(self.get_ad(), self.get_soyad(), self.statu_bul())
+        return "Ad: {}\nSoyad: {}\nOnerilen Statü: {}\n".format(self.get_ad(), self.get_soyad(), self.get_statu())
 

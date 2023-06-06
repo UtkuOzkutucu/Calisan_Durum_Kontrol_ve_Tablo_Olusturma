@@ -15,7 +15,7 @@ def main():
 
         issiz1 = Issiz("12345678912", "Ahmet", "Mehmet", 40, "Erkek", "Türk", {"mavi_yaka": 62, "beyaz_yaka": 30, "yonetici": 10})
         issiz2= Issiz("12345678913", "Zehra", "Tosun", 52, "Kadın", "Türk", {"mavi_yaka": 180, "beyaz_yaka": 20, "yonetici": 80})
-        issiz3 = Issiz("12345678914", "Aylin", "Özdemir", 44, "Kadın", "Türk", {"mavi_yaka": 90, "beyaz_yaka": 50, "yonetici": 30})
+        issiz3 = Issiz("12345678914", "Aylin", "Özdemir", 44, "Kadın", "Türk", {"mavi_yaka": 90, "beyaz_yaka": 50, "yonetici": 500})
 
         print(issiz1)
         print(issiz2)
